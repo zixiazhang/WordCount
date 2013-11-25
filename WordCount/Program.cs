@@ -14,9 +14,6 @@ namespace WordCount
             if (File.Exists(fileToCount))
             {
                 ProcessFile(fileToCount);
-
-                //Could have probaly done it using linq in one line, but I think a trie would be much faster with larger files
-                //var result = fileText.Split(null).GroupBy(x => x).Select(x => new { Word = x.First(), Count = x.Count() });
             }
             else
             {
