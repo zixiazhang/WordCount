@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using WordCount.Interfaces;
 
@@ -38,7 +38,7 @@ namespace WordCount
         public Dictionary<string, int> GetWordCountDictionary()
         {
             var wordCountDictionary = new Dictionary<string, int>();
-            this.rootNode.GetWordCount(wordCountDictionary);
+            this.rootNode.PopulateWordCountDictionary(ref wordCountDictionary);
             return  wordCountDictionary;
         }
 
