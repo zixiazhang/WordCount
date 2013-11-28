@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using WordCount.Interfaces;
 
 namespace WordCount
@@ -36,7 +36,7 @@ namespace WordCount
             return characterNode;
         }
 
-        public void GetWordCount(Dictionary<string, int> wordCountDictionary)
+        public void PopulateWordCountDictionary(ref Dictionary<string, int> wordCountDictionary)
         {
             foreach (var childNode in this.childrenNodes.Values)
             {
@@ -44,7 +44,7 @@ namespace WordCount
                 {
                     wordCountDictionary.Add(childNode.ToString(), childNode.WordCount);
                 }
-                childNode.GetWordCount(wordCountDictionary);
+                childNode.PopulateWordCountDictionary(ref wordCountDictionary);
             }
         }
 
